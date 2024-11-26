@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Comentários e Gráficos</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Gráficos</h1>
+        <form action="/" method="post">
+            <textarea name="data" placeholder="Insira os dados no formato: ângulo,distância,tamanho..."></textarea>
+            <br>
+            <label for="chart_type">Escolha o tipo de gráfico:</label>
+            <select name="chart_type">
+                <option value="scatter">Gráfico de Dispersão</option>
+                <option value="line">Gráfico de Linha</option>
+                <option value="bar">Gráfico de Barras</option>
+                <option value="polar">Gráfico Polar</option>
+                <option value="heatmap">Heatmap</option>
+            </select>
+            <br>
+            <input type="submit" value="Gerar Gráfico">
+        </form>
+        {% if plot_url %}
+            <h2>Seu Gráfico</h2>
+            <img src="data:image/png;base64,{{ plot_url }}">
+            <form action="/export_excel" method="post" style="display:inline;">
+                <input type="hidden" name="data" value="{{ request.form['data'] }}">
+                <button type="submit" class="export-button excel-button">Exportar como Excel</button>
+            </form>
+            <form action="/export_pdf" method="post" style="display:inline;">
+                <input type="hidden" name="data" value="{{ request.form['data'] }}">
+                <button type="submit" class="export-button pdf-button">Exportar como PDF</button>
+            </form>
+            <div class="stats">
+                <h2>Estatísticas</h2>
+                <p>Média: {{ stats.mean }}</p>
+                <p>Mediana: {{ stats.median }}</p>
+                <p>Moda: {{ stats.mode }}</p>
+                <p>Maior Dado: {{ stats.max }}</p>
+                <p>Menor Dado: {{ stats.min }}</p>
+                <p>Desvio Padrão: {{ stats.stdev }}</p>
+                <p>Variância: {{ stats.variance }}</p>
+            </div>
+        {% endif %}
+
+        <h1>Adicionar Comentário</h1>
+        <div class="comment-form">
+            <input type="text" id="name" placeholder="Seu nome" required>
+            <input type="text" id="image-url" placeholder="URL da imagem" required>
+            <textarea id="comment" rows="4" placeholder="Seu comentário" required></textarea>
+            <button onclick="addComment()">Adicionar Comentário</button>
+        </div>
+        <div class="counter">
+            Comentários: <span id="comment-count">0</span>
+        </div>
+        <div class="comments-list" id="comments-list">
+            <!-- Comentários serão exibidos aqui -->
+        </div>
+
+        <!-- Google Maps -->
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14779.256788764775!2d-49.94739135!3d-22.171143599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1725251034058!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Botão de Voltar ao Topo -->
+        <a href="#" class="scroll-to-top" onclick="scrollToTop(event)">Voltar ao Topo</a>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

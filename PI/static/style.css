@@ -1,0 +1,284 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://media.istockphoto.com/id/1401722160/pt/foto/sunny-plantation-with-growing-soya.jpg?s=612x612&w=0&k=20&c=q7T6g_3IjY4LRE07_TAQRyrOMqdYKDkdQHfy2DuVIZU=') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos */
+h1, h2 {
+    color: #007bff;
+    text-align: center;
+}
+
+/* Formulário de Gráficos */
+form {
+    margin: 20px 0;
+}
+
+form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    box-sizing: border-box;
+    color: #000; /* Texto preto */
+}
+
+form select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Botões de Exportação */
+.export-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.export-button.excel-button {
+    background-color: #4caf50;
+}
+
+.export-button.excel-button:hover {
+    background-color: #388e3c;
+}
+
+.export-button.pdf-button {
+    background-color: #f44336;
+}
+
+.export-button.pdf-button:hover {
+    background-color: #c62828;
+}
+
+/* Contador de Comentários */
+.counter {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #000; /* Texto preto */
+    font-size: 18px;
+}
+
+/* Lista de Comentários */
+.comments-list {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.comment img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex: 1;
+    color: #000; /* Texto preto */
+}
+
+.comment-content p {
+    margin: 5px 0;
+}
+
+.comment-content .date-time {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.remove-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: #e60000;
+}
+
+/* Google Maps */
+#map {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+}
+
+#map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Botão de Voltar ao Topo */
+.scroll-to-top {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px auto;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* Estatísticas */
+.stats {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.stats p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #000; /* Texto preto */
+}
+
+/* Formulário de Comentário */
+.comment-form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-form input,
+.comment-form textarea,
+.comment-form button {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    color: #000; /* Texto preto */
+}
+
+.comment-form textarea {
+    resize: vertical;
+}
+
+.comment-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+.stats {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.stats:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.stats h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.stats p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.stats p span {
+    font-weight: bold;
+    color: #000;
+}
